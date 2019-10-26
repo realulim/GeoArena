@@ -30,3 +30,5 @@ HELP.md
 
 ### GeoArena ###
 /src/main/resources/here.properties
+/node/
+/node_modules/
