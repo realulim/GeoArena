@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head th:fragment="commonHead">
+	<title>GeoArena</title>
+	<meta charset="UTF-8"/>
+	<meta name="_hereAppId" th:content="${@environment.getProperty('here.appid')}"/>
+	<meta name="_hereAppCode" th:content="${@environment.getProperty('here.appcode')}"/>
+	<meta name="_herePlacesGeocodeUrl" th:content="${@environment.getProperty('geo.geocodeurl')}"/>
+	<meta name="_hereRoutingUrl" th:content="${@environment.getProperty('geo.routingurl')}"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Kelly+Slab" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/webjars/leaflet/1.4.0/dist/leaflet.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/webjars/leaflet-fullscreen/1.0.2/dist/leaflet.fullscreen.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/webjars/leaflet-routing-machine/3.2.12/dist/leaflet-routing-machine.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/webjars/sweetalert2/8.12.1/dist/sweetalert2.min.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/common.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/leaflet.defaultextent.css"/>
+    </head>
+
+    <body>
+
+	<div th:fragment="scripts">
+	    <script src="/webjars/jquery/3.4.0/dist/jquery.min.js" type="application/javascript"></script>
+	    <script src="/webjars/leaflet/1.4.0/dist/leaflet.js" type="application/javascript"></script>
+	    <script src="/webjars/leaflet-fullscreen/1.0.2/dist/Leaflet.fullscreen.min.js" type="application/javascript"></script>
+	    <script src="/webjars/leaflet-routing-machine/3.2.12/dist/leaflet-routing-machine.min.js" type="application/javascript"></script>
+	    <script src="/webjars/leaflet-control-geocoder/1.6.0/dist/Control.Geocoder.js" type="application/javascript"></script>
+	    <script src="/webjars/sweetalert2/8.12.1/dist/sweetalert2.min.js" type="application/javascript"></script>
+	    <script src="/js/Control.Geocoder.HerePlaces.js" type="application/javascript"></script>
+	    <script src="/js/leaflet.defaultextent.js" type="application/javascript"></script>
+	    <script src="/js/leaflet-tilelayer-here.js" type="application/javascript"></script>
+	    <script src="/js/lrm-here-1.1.0.js" type="application/javascript"></script>
+	    <script src="/js/map.js" type="application/javascript"></script>
+	    <script src="/js/router.js" type="application/javascript"></script>
+	    <script src="/js/footer.js" type="application/javascript"></script>
+	</div>
+
+    </body>
+
+</html>

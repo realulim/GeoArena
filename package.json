@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "leaflet-control-geocoder-here-places": "1.1.0",
+        "leaflet.defaultextent": "0.0.3"
+    }
+}

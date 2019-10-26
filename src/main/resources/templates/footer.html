@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+    <div th:fragment="footer" class="footer">
+        <button id="randomPlace" class="button" title="Reverse Geocoding   |   Mapping">Random Place</button>
+        <button id="router" class="button" title="Geocoding   |   Routing   |   Mapping">Router</button>
+	<div th:replace="metaData :: scripts"></div>
+    </div>
+
+</html>

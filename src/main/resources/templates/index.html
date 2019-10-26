@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="metaData :: commonHead">
+    </head>
+
+    <body>
+
+	<div class="header-container">
+	    <header class="header">
+		<h1 style="padding-left: 1rem; padding-right: 4rem;">
+		    <a class="headline" href="/">Welcome to GeoArena</a>
+		</h1>
+		<form th:method="POST" th:action="@{/search/places}">
+		    <input class="search-box" type="search" id="p" name="p" placeholder="Search for Places ..." th:value="${placesQuery}"
+			   title="Geocoding   |   ST_Within   |   ST_Area   |   Mapping"/>
+		    <input type="hidden" name="t" th:value="places">
+		</form>
+		<form th:method="POST" th:action="@{/search/routes}">
+		    <input class="search-box" type="search" id="r" name="r" placeholder="Search for Routes ..." th:value="${routesQuery}"
+			   title="Geocoding   |   ST_DWithin   |   ST_SetSRID   |   Mapping"/>
+		    <input type="hidden" name="t" th:value="routes">
+		</form>
+	    </header>
+	    <div class="content">
+		<div id="map"></div>
+	    </div>
+	</div>
+
+	<div th:replace="footer :: footer"></div>
+
+	<script th:inline="javascript">
+	    $(document).ready(function() {
+		$(".header").animate({
+		    fontSize: '32px'
+		}, "slow");
+		$("#p").select();
+	    });
+	    let foundLocation = /*[[${foundLocation}]]*/ 'El Dorado';
+	    let country = /*[[${country}]]*/ 'Atlantis';
+	    if (country) {
+		let countryLayer = createCountryLayer(country);
+		addLocationMarkerToLayer(countryLayer, foundLocation);
+	    }
+	    let mountains = /*[[${mountains}]]*/ '[]';
+	    if (mountains) {
+		mountains.forEach(mountain => {
+		    createMountainLayer(mountain.title, mountain.height, mountain.shape);
+		});
+		let showMountains = /*[[${showMountains}]]*/ '[]';
+		if (showMountains) showMountainLayer();
+	    }
+	    let routes = /*[[${routes}]]*/ '[]';
+	    if (routes) {
+		routes.forEach(route => {
+		    createRouteLayer(route.shape, route.name);
+		});
+		addLocationMarkerToRoutesLayerGroupAndZoom(foundLocation);
+	    }
+	</script>
+    </body>
+
+</html>
