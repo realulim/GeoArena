@@ -16,3 +16,18 @@ here.appcode=YOUR_APP_CODE
 4. `mvn package`
 5. `docker-compose up`
 6. Point your browser to http://localhost (the app's logfile tells you it actually runs on port 8090, but that is inside the docker container)
+
+### What you can with GeoArena
+##### Searching for Places (Geocoding)
+The first search box in the top pane is for searching places. Try to input the name of some place like `Cairo` or `Wikimedia Foundation`. The location is shown on the map and you'll be zoomed to the country. If you click on the location, you are zoomed further in to it. If there are any mountains in the country, those are displayed as well. You can click on the mountains to get their height.
+
+Please note that only a small subset of the world's mountains are included in GeoArena. If the mountains get in your way, you can switch the mountain layer off by using the control on the top right of the map, where you can also change to other views like satellite view.
+
+##### Generating random Places (reverse Geocoding)
+Click on the button "Random Place" at the bottom left to create random geo coordinates and then check if there is a known location at those coordinates. If yes, then the location's name is displayed, if no (most cases) the location will simply say "nothing to see here".
+
+##### Creating Routes (Routing)
+Click the button "Router" in the bottom pane to display the routing widget. Input start and end destination to create a route. If you then click on "Save Route" it will be saved to the database.
+
+##### Searching for Routes (spatial Functions)
+The second search box in the top pane is for searching routes. If you have saved a few routes to the database, you can then enter the name of a place and GeoArena will display all routes passing near that place (10 km maximum distance) and all mountains near that route (20 km maximum distance).
