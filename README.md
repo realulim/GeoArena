@@ -27,7 +27,7 @@ Please note that only a small subset of the world's mountains are included in Ge
 Click on the button "Random Place" at the bottom left to create random geo coordinates and then check if there is a known location at those coordinates. If yes, then the location's name is displayed, if no (most cases) the location will simply say "nothing to see here".
 
 #### Creating Routes (Routing)
-Click the button "Router" in the bottom pane to display the routing widget. Input start and end destination to create a route. If you then click on "Save Route" it will be saved to the database.
+Click the button "Router" in the bottom pane to display the routing widget. Input start and end destination to create a route. If you then click on "Save Route" it will be saved to the database. If you restart the application, then the database will be re-initialised and your routes are gone. This is an example application for learning, don't do anything serious with it :wink:
 
 #### Searching for Routes (spatial Functions)
 The second search box in the top pane is for searching routes. If you have saved a few routes to the database, you can then enter the name of a place and GeoArena will display all routes passing near that place (10 km maximum distance) and all mountains near that route (20 km maximum distance).
